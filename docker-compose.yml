@@ -1,0 +1,9 @@
+version: "3"
+
+services:
+ #Sinatra SampleApplication
+ app:
+   build: .
+
+   volumes:
+     - .:/app
