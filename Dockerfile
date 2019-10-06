@@ -7,3 +7,8 @@ WORKDIR /app
 #Install gem by Bundler
 COPY Gemfile Gemfile.lock ./
 RUN bundle install
+
+#exec ENTRYPOINT
+COPY docker-entrypoint.sh /
+RUN chmod +x /docker-entrypoint.sh
+ENTRYPOINT ["/docker-entrypoint.sh"]

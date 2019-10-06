@@ -3,7 +3,15 @@ version: "3"
 services:
  #Sinatra SampleApplication
  app:
+#   entrypoint: /docker-entrypoint.sh
    build: .
+
+   command: ruby app.rb -o 0.0.0.0
 
    volumes:
      - .:/app
+     - app-bundle:/usr/local/bundle
+
+volumes:
+ #Volumes boxed gem installed by Bundler
+ app-bundle:
